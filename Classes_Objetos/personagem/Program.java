@@ -1,7 +1,3 @@
-package Classes_Objetos.personagem;
-
-import Classes_Objetos.personagem.PersonagemGame;
-
 public class Program {
     public static void main(String[] args) {
         PersonagemGame personagem1 = new PersonagemGame();
