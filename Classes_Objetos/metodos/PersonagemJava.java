@@ -1,6 +1,6 @@
 package Classes_Objetos.metodos;
 
-public class PersonagemGame {
+public class PersonagemJava {
     private int saudeAtual;
     private String nome;
 
