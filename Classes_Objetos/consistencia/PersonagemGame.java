@@ -28,9 +28,10 @@ public class PersonagemGame {
     }
 
     public void setNome(String nome) {
-        if (nome != null || !nome.isEmpty()) {
-            this.nome = nome;
+        if (nome == null || nome.isEmpty()) {
+            return;
         }
+        this.nome = nome;
     }
     
     public void tomarDano(int quantidadeDeDano) {
