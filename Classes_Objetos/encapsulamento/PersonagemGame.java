@@ -1,5 +1,3 @@
-package Classes_Objetos.encapsulamento;
-
 public class PersonagemGame {
     private int saudeAtual;
     private String nome;
