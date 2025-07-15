@@ -1,9 +1,7 @@
 public class Quadrado extends Retangulo{
     private double lado;
 
-    public Quadrado(double lado) {
-        super();
-        this.lado = lado;
+    public Quadrado() {
     }
 
     public double getLado() {
