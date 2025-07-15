@@ -10,11 +10,11 @@ public class Pedido {
     public double calcularTotal() {
         double subtotal = 0.0;
         for (ItemPedido item : itens) {
-            subtotal += item.getProduto().obterPrecoLiquido() * item.getQuantidade();
+            subtotal += item.getProduto().getPrecoBruto() * item.getQuantidade();
         }
-        double totalComDesconto = subtotal * (1 - percentualDesconto / 100);
-
-        double totalFinal = totalComDesconto * 1.171;
+        double valorDesconto = subtotal * percentualDesconto / 100;
+        double totalComDesconto = subtotal - valorDesconto;
+        double totalFinal = totalComDesconto * 1.17;
         
         return totalFinal;
     }
