@@ -31,7 +31,12 @@ public class Livro {
     }
 
     public void setAutor(String autor) throws AutorInvalidoException {
-        if (autor == null || autor.trim().split(" ").length < 2) {
+        if (autor == null || autor.trim().isEmpty()) {
+            throw new AutorInvalidoException("Nome de autor inválido");
+        }
+        
+        String[] partesNome = autor.trim().split("\\s+");
+        if (partesNome.length < 2) {
             throw new AutorInvalidoException("Nome de autor invalido");
         }
         this.autor = autor;
