@@ -34,8 +34,8 @@ public class Pedido {
             BigDecimal quantidade = BigDecimal.valueOf(item.getQuantidade());
             BigDecimal totalItem = precoUnitario.multiply(quantidade);
 
-            resumo.append("Tipo: ").append(item.getProduto().getTipo())
-                    .append("  Titulo: ").append(item.getProduto().getNome())
+            resumo.append("Tipo: ").append(item.getProduto().getClass().getSimpleName())
+                    .append("  Titulo: ").append(item.getProduto().getTitulo())
                     .append("  Preco: ").append(String.format("%.2f", precoUnitario))
                     .append("  Quant: ").append(item.getQuantidade())
                     .append("  Total: ").append(String.format("%.2f", totalItem))
