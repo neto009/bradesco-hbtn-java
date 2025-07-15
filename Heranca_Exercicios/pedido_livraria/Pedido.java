@@ -8,10 +8,14 @@ public class Pedido {
     }
 
     public double calcularTotal() {
-        double total = 0.0;
+        double subtotal = 0.0;
         for (ItemPedido item : itens) {
-            total += item.getProduto().obterPrecoLiquido() * item.getQuantidade();
+            subtotal += item.getProduto().obterPrecoLiquido() * item.getQuantidade();
         }
-        return total * (1 - percentualDesconto / 100);
+        double totalComDesconto = subtotal * (1 - percentualDesconto / 100);
+
+        double totalFinal = totalComDesconto * 1.17;
+        
+        return totalFinal;
     }
 }
