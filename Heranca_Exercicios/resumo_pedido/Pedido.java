@@ -23,7 +23,7 @@ public class Pedido {
         return totalComDesconto.doubleValue();
     }
 
-    public String apresentarResumoPedido() {
+    public void apresentarResumoPedido() {
         StringBuilder resumo = new StringBuilder();
         BigDecimal subtotal = BigDecimal.ZERO;
 
@@ -54,6 +54,6 @@ public class Pedido {
         resumo.append("TOTAL PEDIDO: ").append(String.format("%.2f", totalComDesconto)).append("\n");
         resumo.append("----------------------------");
 
-        return resumo.toString();
+        System.out.println(resumo.toString());
     }
 }
