@@ -5,10 +5,10 @@ public class Livro {
     private String autor;
     private double preco;
 
-    public Livro(String titulo, String autor, double preco) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.preco = preco;
+    public Livro(String titulo, String autor, double preco) throws LivroInvalidoException, AutorInvalidoException {
+        setTitulo(titulo);
+        setAutor(autor);
+        setPreco(preco);
     }
 
     public String getTitulo() {
@@ -31,12 +31,7 @@ public class Livro {
     }
 
     public void setAutor(String autor) throws AutorInvalidoException {
-        if (autor == null || autor.trim().isEmpty()) {
-            throw new AutorInvalidoException("Nome de autor inválido");
-        }
-        
-        String[] partesNome = autor.trim().split("\\s+");
-        if (partesNome.length < 2) {
+        if (autor == null || autor.trim().split(" ").length < 2) {
             throw new AutorInvalidoException("Nome de autor invalido");
         }
         this.autor = autor;
