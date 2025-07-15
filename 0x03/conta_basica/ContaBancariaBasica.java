@@ -38,7 +38,7 @@ public class ContaBancariaBasica {
         if (this.saldo < 0) {
             return 0.0;
         }
-        return this.saldo * this.taxaJurosAnual;
+        return this.saldo * (this.taxaJurosAnual / 100.0 / 12.0);
     }
 
     public void aplicarAtualizacaoMensal() {
