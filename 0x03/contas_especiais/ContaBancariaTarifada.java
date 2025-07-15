@@ -3,9 +3,8 @@ import exceptions.*;
 public class ContaBancariaTarifada extends ContaBancariaBasica {
     private int quantidadeTransacoes;
 
-    public ContaBancariaTarifada(String numeracao, double taxaJurosAnual, int tarifaFixa) {
+    public ContaBancariaTarifada(String numeracao, double taxaJurosAnual) {
         super(numeracao, taxaJurosAnual);
-        this.quantidadeTransacoes = quantidadeTransacoes;
     }
 
     public int getQuantidadeTransacoes() {
