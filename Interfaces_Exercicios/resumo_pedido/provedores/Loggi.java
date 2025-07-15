@@ -7,11 +7,7 @@ public class Loggi implements ProvedorFrete {
 
     @Override
     public Frete calcularFrete(double peso, double valor) {
-        if (peso > 5) {
-            double valorFrete = valor * 0.12;
-            return new Frete(valorFrete, obterTipoProvedorFrete());
-        }
-        double valorFrete = valor * 0.04;
+        double valorFrete = (peso > 2.0) ? valor * 0.07 : valor * 0.045;
         return new Frete(valorFrete, obterTipoProvedorFrete());
     }
 
