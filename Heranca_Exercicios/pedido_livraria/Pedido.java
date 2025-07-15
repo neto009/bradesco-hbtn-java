@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Pedido {
     private double percentualDesconto;
     private ItemPedido[] itens;
@@ -8,14 +11,16 @@ public class Pedido {
     }
 
     public double calcularTotal() {
-        double subtotal = 0.0;
+        BigDecimal subtotal = BigDecimal.ZERO;
         for (ItemPedido item : itens) {
-            subtotal += item.getProduto().getPrecoBruto() * item.getQuantidade();
+            BigDecimal precoBruto = BigDecimal.valueOf(item.getProduto().getPrecoBruto());
+            BigDecimal quantidade = BigDecimal.valueOf(item.getQuantidade());
+            subtotal = subtotal.add(precoBruto.multiply(quantidade));
         }
-        double valorDesconto = subtotal * percentualDesconto / 100;
-        double totalComDesconto = subtotal - valorDesconto;
-        double totalFinal = totalComDesconto * 1.1667;
-        
-        return totalFinal;
+        BigDecimal valorDesconto = subtotal.multiply(BigDecimal.valueOf(percentualDesconto)).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        BigDecimal totalComDesconto = subtotal.subtract(valorDesconto);
+        BigDecimal totalFinal = totalComDesconto.multiply(BigDecimal.valueOf(1.1667)).setScale(2, RoundingMode.HALF_UP);
+
+        return totalFinal.doubleValue();
     }
 }
