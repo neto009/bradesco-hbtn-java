@@ -14,7 +14,7 @@ public class Pedido {
         }
         double totalComDesconto = subtotal * (1 - percentualDesconto / 100);
 
-        double totalFinal = totalComDesconto * 1.17;
+        double totalFinal = totalComDesconto * 1.171;
         
         return totalFinal;
     }
