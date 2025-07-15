@@ -14,6 +14,9 @@ public class Empregado {
     }
 
     public double calcularBonus(Departamento departamento) {
-        return departamento.getValorMeta();
+        if (departamento.alcancouMeta()) {
+            return getSalarioFixo() * 0.10;
+        }
+        return 0;
     }
 }
