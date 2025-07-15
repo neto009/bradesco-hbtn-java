@@ -28,8 +28,8 @@ public class Contato {
     }
 
     public void exibirContato() {
-        System.out.println("Telefones: ["+ telefones +"]");
-        System.out.println("Emails: ["+ emails +"]");
+        System.out.println("Telefones: "+ telefones);
+        System.out.println("Emails: "+ emails);
     }
 
 

@@ -23,7 +23,6 @@ public class GerenciamentoDeContatos {
     }
 
     public void exibirContatos() {
-        System.out.println("Exibindo todos os contatos:");
         for (Map.Entry<String, Contato> entry : contatos.entrySet()) {
             System.out.println("Nome: " + entry.getKey());
             entry.getValue().exibirContato();
