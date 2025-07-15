@@ -8,7 +8,7 @@ public class ProcessadorPedido {
     }
 
     public void processar(Pedido pedido) {
-        double frete = provedorFrete.calcularFrete(pedido.getPeso(), pedido.getTotal());
+        Frete frete = provedorFrete.calcularFrete(pedido.getPeso(), pedido.getValor());
         pedido.setFrete(frete);
     }
 }
