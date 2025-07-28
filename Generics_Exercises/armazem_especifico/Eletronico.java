@@ -7,14 +7,6 @@ public class Eletronico {
         this.valor = valor;
     }
 
-    public Comida(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
     @Override
     public String toString() {
         String precoFormatado = String.format("%.6f", valor).replace('.', ',');
