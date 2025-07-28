@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Biblioteca<T extends Midia> {
     private List<T> midias = new ArrayList<>();
 
