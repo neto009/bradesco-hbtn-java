@@ -20,18 +20,22 @@ public class PessoasArray {
     // implementar o método de buscaBinaria
     public void buscaBinaria(String nome){
         boolean encontrado = false;
-        int posicao = 0;
-        System.out.println("Procurando pelo nome: \"" + nome + "\"");
-        for (int i = 0; i < nomes.length; i++) {
-            System.out.println("Passando pelo indice:" + i);
-            if (nomes[i] == nome) {
-                encontrado = true;
-                posicao = i;
+        int inicio = 0;
+        int fim = nomes.length - 1;
+        for (; inicio <= fim;) {
+            int meio = (inicio + fim) / 2;
+            System.out.println("Passando pelo indice: " + meio);
+            int comparacao = nomes[meio].compareTo(nome);
+            if (comparacao == 0) {
+                System.out.println("Nome pesquisado é " + nome + " que está na posição " + meio);
+                return;
+            } else if (comparacao < 0) {
+                inicio = meio + 1;
+            } else {
+                fim = meio - 1;
             }
         }
-        if (encontrado){
-            System.out.println("Nome pesquisado é " + nome + " que está na posição " + i);
-        } else {
+        if (!encontrado){
             throw new IllegalArgumentException("O nome " + nome + " não se encontra no array de nomes");
         }
 
