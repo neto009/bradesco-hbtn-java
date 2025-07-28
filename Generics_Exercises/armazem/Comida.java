@@ -11,6 +11,8 @@ public class Comida {
 
     @Override
     public String toString() {
-        return "[" + nome + "] " + calorias + " R$ " + preco;
+        String caloriasFormatadas = String.format("%.6f", (double)calorias).replace('.', ',');
+        String precoFormatado = String.format("%.6f", preco).replace('.', ',');
+        return "[" + nome + "] " + caloriasFormatadas + " R$ " + precoFormatado;
     }
 }
