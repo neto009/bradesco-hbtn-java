@@ -18,10 +18,10 @@ public class Blog {
         return autores;
     }
 
-    public Map<Categorias, Long> obterContagemPorCategoria() {
-        Map<Categorias, Long> contagem = new HashMap<>();
+    public Map<Categorias, Integer> obterContagemPorCategoria() {
+        Map<Categorias, Integer> contagem = new HashMap<>();
         for (Post post : posts) {
-            contagem.put(post.getCategoria(), contagem.getOrDefault(post.getCategoria(), 0L) + 1);
+            contagem.put(post.getCategoria(), contagem.getOrDefault(post.getCategoria(), 0) + 1);
         }
         return contagem;
     }
