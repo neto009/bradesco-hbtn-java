@@ -20,6 +20,7 @@ public class PessoasArray {
     // implementar o método de buscaBinaria
     public void buscaBinaria(String nome){
         boolean encontrado = false;
+        System.out.println("Procurando o nome: \"" + nome + "\"");
         int inicio = 0;
         int fim = nomes.length - 1;
         for (; inicio <= fim;) {
@@ -27,7 +28,7 @@ public class PessoasArray {
             System.out.println("Passando pelo indice: " + meio);
             int comparacao = nomes[meio].compareTo(nome);
             if (comparacao == 0) {
-                System.out.println("Nome pesquisado é " + nome + " que está na posição " + meio);
+                System.out.println("Nome " + nome + " encontrado na posição " + meio);
                 return;
             } else if (comparacao < 0) {
                 inicio = meio + 1;
