@@ -1,11 +1,13 @@
 public class Post implements Comparable<Post> {
-    private String titulo;
     private Autor autor;
+    private String titulo;
+    private String corpo;
     private Categorias categoria;
 
-    public Post(String titulo, Autor autor, Categorias categoria) {
+    public Post(Autor autor, String titulo, String corpo, Categorias categoria) {
         this.titulo = titulo;
         this.autor = autor;
+        this.corpo = corpo;
         this.categoria = categoria;
     }
 
