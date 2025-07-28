@@ -9,6 +9,10 @@ public class Comida {
         this.preco = preco;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     @Override
     public String toString() {
         String caloriasFormatadas = String.format("%.6f", (double)calorias).replace('.', ',');

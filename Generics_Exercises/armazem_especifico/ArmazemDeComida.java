@@ -11,4 +11,14 @@ public class ArmazemDeComida extends Armazem<Comida> {
     public Comida obterDoInventario(String nome) {
         return itens.get(nome);
     }
+
+    @Override
+    public void adicionar(Comida item) {
+        itens.put(item.getNome(), item);
+    }
+
+    @Override
+    public Comida obter(String nome) {
+        return itens.get(nome);
+    }
 }

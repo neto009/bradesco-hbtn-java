@@ -7,6 +7,10 @@ public class Eletronico {
         this.valor = valor;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
     @Override
     public String toString() {
         String precoFormatado = String.format("%.6f", valor).replace('.', ',');

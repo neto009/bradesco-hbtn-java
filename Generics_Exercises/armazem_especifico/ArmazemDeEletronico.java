@@ -11,4 +11,14 @@ public class ArmazemDeEletronico extends Armazem<Eletronico> {
     public Eletronico obterDoInventario(String nome) {
         return itens.get(nome);
     }
+
+    @Override
+    public void adicionar(Eletronico item) {
+        itens.put(item.getDescricao(), item);
+    }
+
+    @Override
+    public Eletronico obter(String nome) {
+        return itens.get(nome);
+    }
 }
