@@ -19,11 +19,11 @@ public class Blog {
         return autores;
     }
 
-    public Map<String, Long> obterContagemPorCategoria() {
-        Map<String, Long> contagemPorCategoria = new TreeMap<>();
+    public Map<String, Integer> obterContagemPorCategoria() {
+        Map<String, Integer> contagemPorCategoria = new TreeMap<>();
         for (Post post : postagens) {
             contagemPorCategoria.put(post.getCategoria(),
-                    contagemPorCategoria.getOrDefault(post.getCategoria(), 0L) + 1);
+            contagemPorCategoria.getOrDefault(post.getCategoria(), 0) + 1);
         }
         return contagemPorCategoria;
     }
