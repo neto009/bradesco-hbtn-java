@@ -9,7 +9,7 @@ public class Eletronico {
 
     @Override
     public String toString() {
-        String precoFormatado = String.format("%.6f", preco).replace('.', ',');
+        String precoFormatado = String.format("%.6f", valor).replace('.', ',');
         return "[" + descricao + "] R$ " + precoFormatado;
     }
 }
