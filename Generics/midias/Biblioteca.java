@@ -1,5 +1,3 @@
-package Generics.midias;
-
 public class Biblioteca<T extends Midia> {
     private List<T> midias = new ArrayList<>();
 
