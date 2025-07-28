@@ -11,7 +11,7 @@ public class Blog {
     }
 
     public Set<Autor> obterTodosAutores() {
-        Set<Autor> autores = new HashSet<>();
+        Set<Autor> autores = new TreeSet<>();
         for (Post post : posts) {
             autores.add(post.getAutor());
         }
