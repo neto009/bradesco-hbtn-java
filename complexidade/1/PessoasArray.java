@@ -24,7 +24,6 @@ public class PessoasArray {
             System.out.println("Passando pelo indice:" + i);
             if (nomes[i].equalsIgnoreCase(nome)) {
                 System.out.println("Nome pesquisado é " + nome + " que está na posição " + i);
-                return i;
             }
         }
         throw new IllegalArgumentException("O nome " + nome + " não se encontra no array de nomes");
