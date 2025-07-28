@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArmazemDeComida extends Armazen<Comida> {
+public class ArmazemDeComida extends Armazem<Comida> {
     private Map<String, Comida> itens = new HashMap<>();
 
     @Override
