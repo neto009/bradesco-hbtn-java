@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Blog {
-    private Set<Post> posts = new HashSet<>();
+    private Set<Post> posts = new TreeSet<>();
 
     public void adicionarPostagem(Post post) {
         if (posts.contains(post)) {
@@ -19,7 +19,7 @@ public class Blog {
     }
 
     public Map<Categorias, Integer> obterContagemPorCategoria() {
-        Map<Categorias, Integer> contagem = new HashMap<>();
+        Map<Categorias, Integer> contagem = new TreeMap<>();
         for (Post post : posts) {
             contagem.put(post.getCategoria(), contagem.getOrDefault(post.getCategoria(), 0) + 1);
         }
@@ -47,7 +47,7 @@ public class Blog {
     }
 
     public Map<Categorias, Set<Post>> obterTodosPostsPorCategorias() {
-        Map<Categorias, Set<Post>> postsPorCategorias = new HashMap<>();
+        Map<Categorias, Integer> contagem = new TreeMap<>();
         for (Post post : posts) {
             postsPorCategorias
                     .computeIfAbsent(post.getCategoria(), k -> new TreeSet<>())
@@ -57,7 +57,7 @@ public class Blog {
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor() {
-        Map<Autor, Set<Post>> postsPorAutor = new HashMap<>();
+        Map<Categorias, Integer> contagem = new TreeMap<>();
         for (Post post : posts) {
             postsPorAutor
                     .computeIfAbsent(post.getAutor(), k -> new TreeSet<>())
