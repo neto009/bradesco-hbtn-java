@@ -47,7 +47,7 @@ public class Blog {
     }
 
     public Map<Categorias, Set<Post>> obterTodosPostsPorCategorias() {
-        Map<Categorias, Integer> contagem = new TreeMap<>();
+        Map<Categorias, Set<Post>> postsPorCategorias = new TreeMap<>();
         for (Post post : posts) {
             postsPorCategorias
                     .computeIfAbsent(post.getCategoria(), k -> new TreeSet<>())
@@ -57,7 +57,7 @@ public class Blog {
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor() {
-        Map<Categorias, Integer> contagem = new TreeMap<>();
+        Map<Autor, Set<Post>> postsPorAutor = new TreeMap<>();
         for (Post post : posts) {
             postsPorAutor
                     .computeIfAbsent(post.getAutor(), k -> new TreeSet<>())
