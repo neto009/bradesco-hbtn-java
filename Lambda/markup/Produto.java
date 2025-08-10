@@ -6,7 +6,7 @@ public class Produto {
     private double preco;
     private double percentualMarkup = 10.0;
 
-    public Produto(String nome, double preco) {
+    public Produto(double preco, String nome) {
         this.nome = nome;
         this.preco = preco;
     }
