@@ -59,8 +59,9 @@ public class Pessoa implements Comparable<Pessoa> {
     public String toString() {
         return String.format(new Locale("pt", "BR"), "[%d] %s %s %d R$ %.6f", codigo, nome, cargo, idade, salario);
     }
+
     @Override
     public int compareTo(Pessoa outra) {
-        return Integer.compare(this.codigo, outra.codigo);
+        return Integer.compare(outra.codigo, this.codigo);
     }
 }
