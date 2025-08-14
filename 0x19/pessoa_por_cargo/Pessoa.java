@@ -1,4 +1,3 @@
-import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Pessoa {
@@ -58,9 +57,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        NumberFormat nf = NumberFormat.getInstance(new Locale("pt", "BR"));
-        nf.setMinimumFractionDigits(6);
-        nf.setMaximumFractionDigits(6);
-        return String.format("[%d] %s %s %d R$ %s", codigo, nome, cargo, idade, nf.format(salario));
+        return String.format(new Locale("pt", "BR"), "[%d] %s %s %d R$ %.2f", codigo, nome, cargo, idade, salario);
     }
 }
